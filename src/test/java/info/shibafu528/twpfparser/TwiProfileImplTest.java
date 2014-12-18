@@ -22,15 +22,15 @@
  * THE SOFTWARE.
  */
 
+package info.shibafu528.twpfparser;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Date;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TwiProfileImplTest {
 

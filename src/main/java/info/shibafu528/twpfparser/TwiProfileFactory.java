@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+package info.shibafu528.twpfparser;
+
 import org.jsoup.Jsoup;
 
 import java.io.IOException;

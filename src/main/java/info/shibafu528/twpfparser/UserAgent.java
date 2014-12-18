@@ -22,56 +22,26 @@
  * THE SOFTWARE.
  */
 
-import java.util.Date;
-import java.util.Set;
+package info.shibafu528.twpfparser;
 
 /**
  * Created by shibafu on 14/12/17.
  */
-public interface TwiProfile {
-    public String getName();
+public enum UserAgent {
+    UA_PC_CHROME("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36"),
+    UA_ANDROID_GB("Mozilla/5.0 (Linux; U; Android 2.3.3; ja-jp; SonyEricssonX10i Build/3.0.1.G.0.75) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"),
+    UA_ANDROID_JB("Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03S) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19"),
+    UA_PC_IE8("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648)"),
+    UA_PC_IE10("Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)"),
+    UA_PC_IE11("Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko");
 
-    public String getScreenName();
+    private String userAgent;
 
-    public String getProfileImageUrl();
+    private UserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
 
-    public String getLocation();
-
-    public String getWeb();
-
-    public String getBiography();
-
-    public String getMoreBiography();
-
-    public Set<String> getPersonalTags();
-
-    public Set<String> getLikeTags();
-
-    public Set<String> getDislikeTags();
-
-    public Set<String> getFreeTags();
-
-    public int getFollowingsCount();
-
-    public int getFollowersCount();
-
-    public int getTweetsCount();
-
-    public int getFavoritesCount();
-
-    public int getListedCount();
-
-    public float getTweetPerDay();
-
-    public int getElapsed();
-
-    public Date getSince();
-
-    public Date getProfileSince();
-
-    public Date getProfileUpdated();
-
-    public Date getApiUsed();
-
-    public Date getNextApiUse();
+    public String getUserAgent() {
+        return userAgent;
+    }
 }

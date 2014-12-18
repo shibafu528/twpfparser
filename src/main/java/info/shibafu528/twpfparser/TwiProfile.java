@@ -1,3 +1,4 @@
+package info.shibafu528.twpfparser;
 /*
  * The MIT License (MIT)
  *
@@ -22,46 +23,56 @@
  * THE SOFTWARE.
  */
 
-import org.junit.Test;
+import java.util.Date;
+import java.util.Set;
 
-import java.io.IOException;
+/**
+ * Created by shibafu on 14/12/17.
+ */
+public interface TwiProfile {
+    public String getName();
 
-import static org.junit.Assert.*;
+    public String getScreenName();
 
-public class TwiProfileFactoryTest {
+    public String getProfileImageUrl();
 
-    private void fetch(UserAgent userAgent) throws IOException {
-        TwiProfile profile = TwiProfileFactory.getTwiProfile("grslf", userAgent);
-        assertEquals(profile.getScreenName(), "@grslf");
-    }
+    public String getLocation();
 
-    @Test
-    public void fetchPCChrome() throws IOException {
-        fetch(UserAgent.UA_PC_CHROME);
-    }
+    public String getWeb();
 
-    @Test
-    public void fetchPCIE8() throws IOException {
-        fetch(UserAgent.UA_PC_IE8);
-    }
+    public String getBiography();
 
-    @Test
-    public void fetchPCIE10() throws IOException {
-        fetch(UserAgent.UA_PC_IE10);
-    }
+    public String getMoreBiography();
 
-    @Test
-    public void fetchPCIE11() throws IOException {
-        fetch(UserAgent.UA_PC_IE11);
-    }
+    public Set<String> getPersonalTags();
 
-    @Test
-    public void fetchAndroid2_3() throws IOException {
-        fetch(UserAgent.UA_ANDROID_GB);
-    }
+    public Set<String> getLikeTags();
 
-    @Test
-    public void fetchAndroid4_1() throws IOException {
-        fetch(UserAgent.UA_ANDROID_JB);
-    }
+    public Set<String> getDislikeTags();
+
+    public Set<String> getFreeTags();
+
+    public int getFollowingsCount();
+
+    public int getFollowersCount();
+
+    public int getTweetsCount();
+
+    public int getFavoritesCount();
+
+    public int getListedCount();
+
+    public float getTweetPerDay();
+
+    public int getElapsed();
+
+    public Date getSince();
+
+    public Date getProfileSince();
+
+    public Date getProfileUpdated();
+
+    public Date getApiUsed();
+
+    public Date getNextApiUse();
 }
