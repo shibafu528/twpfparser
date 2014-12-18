@@ -33,6 +33,8 @@ public interface TwiProfile {
 
     public String getScreenName();
 
+    public String getProfileImageUrl();
+
     public String getLocation();
 
     public String getWeb();

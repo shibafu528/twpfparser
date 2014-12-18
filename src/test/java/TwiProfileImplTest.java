@@ -56,6 +56,13 @@ public class TwiProfileImplTest {
     }
 
     @Test
+    public void testGetProfileImageUrl() throws Exception {
+        String profileImageUrl = profile.getProfileImageUrl();
+        System.out.println("ProfileImageUrl:" + profileImageUrl);
+        assertTrue(profileImageUrl.contains("pbs.twimg.com"));
+    }
+
+    @Test
     public void testGetLocation() throws Exception {
         String location = profile.getLocation();
         System.out.println("Location:" + location);
