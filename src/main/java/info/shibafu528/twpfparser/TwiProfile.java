@@ -42,7 +42,11 @@ public interface TwiProfile {
 
     public String getBiography();
 
+    public String getBiographyHtml();
+
     public String getMoreBiography();
+
+    public String getMoreBiographyHtml();
 
     public Set<String> getPersonalTags();
 
