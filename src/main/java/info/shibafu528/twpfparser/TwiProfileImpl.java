@@ -64,6 +64,22 @@ class TwiProfileImpl implements TwiProfile {
     }
 
     /**
+     * 指定ID要素の次にある要素を取得します
+     * @param id キーエレメントのID
+     * @return 要素のテキスト部
+     */
+    private String getElementHtml(String id) {
+        if (!cache.containsKey(id)) {
+            try {
+                cache.put(id, new StringsCache(document.getElementById(id).nextElementSibling().html()));
+            } catch (NullPointerException e) {
+                cache.put(id, new StringsCache(""));
+            }
+        }
+        return cache.get(id).get();
+    }
+
+    /**
      * 指定された文字列と一致するテキスト要素の次にある要素を取得します
      * @param text キーエレメントのテキスト
      * @param alternate ヒットしなかった場合の代替検索キー
@@ -162,8 +178,18 @@ class TwiProfileImpl implements TwiProfile {
     }
 
     @Override
+    public String getBiographyHtml() {
+        return getElementHtml("h-description");
+    }
+
+    @Override
     public String getMoreBiography() {
         return getElement("h-motto");
+    }
+
+    @Override
+    public String getMoreBiographyHtml() {
+        return getElementHtml("h-motto");
     }
 
     @Override
