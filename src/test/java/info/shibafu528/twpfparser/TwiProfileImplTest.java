@@ -80,7 +80,7 @@ public class TwiProfileImplTest {
     public void testGetBiography() throws Exception {
         String biography = profile.getBiography();
         System.out.println("Bio:" + biography);
-        assertTrue(biography.contains("持ち主 ＞＞ @shibafu528"));
+        assertTrue(biography.contains("Owner: @shibafu528"));
     }
 
     @Test
