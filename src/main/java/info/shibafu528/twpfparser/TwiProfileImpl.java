@@ -155,11 +155,14 @@ class TwiProfileImpl implements TwiProfile {
 
     @Override
     public String getProfileImageUrl() {
-        Element element = document.getElementById("user-icon");
-        if (element == null) {
-            element = document.getElementById("profile-image");
+        Element iconContainerElement = document.getElementById("user-icon");
+        if (iconContainerElement == null) {
+            iconContainerElement = document.getElementById("profile-image");
+            if (iconContainerElement == null) {
+                return null;
+            }
         }
-        return element.getElementsByAttribute("src").attr("src");
+        return iconContainerElement.getElementsByAttribute("src").attr("src");
     }
 
     @Override
